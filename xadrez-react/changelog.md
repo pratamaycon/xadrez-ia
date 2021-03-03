@@ -11,7 +11,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Criação do Tabuleiro
 - Criação do Projeto Xadrez-React
 
-## [0.2.0] 03-03-2021
+## [1.0.0] 03-03-2021
 
 ## Modificado 
 
