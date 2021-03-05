@@ -27,7 +27,9 @@ export default createGlobalStyle`
     }
 
     .MuiToolbar-regular {
-      background: transparent;
+      color: black;
+      background: white;
+      padding: 0;
     }
 
     .game {
@@ -47,7 +49,12 @@ export default createGlobalStyle`
       width: 100%;  
       max-height: 64px;
       text-align: center;
-      font-size: 2.25rem;
+      font-size: 3rem;
+      font-family: 'Akaya Kanadaka', cursive;
+      font-family: 'DotGothic16', sans-serif;
+      font-family: 'Flavors', cursive;
+      font-style: normal;
+      font-weight: 400;
     }
 
     .game-board {
