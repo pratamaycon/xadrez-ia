@@ -9,7 +9,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## Corrigido
 
-- Remocao da pasta node_modules no lugar errado.
+- Remoção da pasta node_modules no lugar errado.
 
 ## [1.1.1] 04-03-2021
 
