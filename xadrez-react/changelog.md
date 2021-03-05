@@ -5,11 +5,21 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), e este projeto é aderente ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.1.1] 04-03-2021
+
+## Adicionado
+
+- Criação de Componente para o titulo
+
+## Corrigido 
+
+- Ajustando layout do jogo
+
 ## [1.1.0] 04-03-2021
 
 ## Adicionado 
 
-- Posionanado Peças no Tabuleiro
+- Posicionando Peças no Tabuleiro
 - Criando Classes para cada Peça
 
 ## [1.0.0] 03-03-2021

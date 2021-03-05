@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+    html, body {
+      height: 100%;
+    }
+    
     body {
         font: 14px 'Century Gothic', Futura, sans-serif;
-        margin: 20px;
         background-color: gray;
+        margin: 0;
     }
 
     ol,
@@ -21,10 +25,33 @@ export default createGlobalStyle`
     .status {
       margin-bottom: 10px;
     }
+
+    .MuiToolbar-regular {
+      background: transparent;
+    }
+
     .game {
-      width: 500px;
-      margin: 0 auto;
+      height: calc(100vh - 48px - 64px);
+      padding: 0;
+      margin: 0;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .titulo {
+      width: 100%;  
+      max-height: 64px;
       text-align: center;
+      font-size: 2.25rem;
+    }
+
+    .game-board {
+
     }
 
     .square {
