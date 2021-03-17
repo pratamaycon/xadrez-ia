@@ -11,6 +11,8 @@ const Board: React.FC<{ squares: any}> = (squares) => {
 
    const renderSquare = (i: number, squareShade: any) => {
         return <Square
+          key={i}
+          keyVal={i}
           style={squares.squares[i] ? squares.squares[i].style : null}
           shade={squareShade}
         />

@@ -36,10 +36,6 @@ export default createGlobalStyle`
       height: calc(100vh - 48px - 64px);
       padding: 0;
       margin: 0;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
       display: flex;
       align-items: center;
       justify-content: center;
