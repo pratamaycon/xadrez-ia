@@ -45,6 +45,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Criação do Tabuleiro
 - Criação do Projeto Xadrez-React
 
+[1.1.2]: https://github.com/pratamaycon/xadrez-ia/pull/9/files
 [1.1.0]: https://github.com/pratamaycon/xadrez-ia/pull/4/files
 [1.0.0]: https://github.com/pratamaycon/xadrez-ia/pull/3/files
 [0.1.0]: https://github.com/pratamaycon/xadrez-ia/pull/1/files
