@@ -1,28 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import initialiseChessBoard from '../../helpers/boardInitialiser';
 import Board from '../board';
 import GameTurn from '../gameturn';
 
-const Game: React.FC = () => {
-    const [state] = useState({
-      squares: initialiseChessBoard(),
-      status: '',
-      turn: 'white'
-    });
+import { GameContainer } from './styles';
 
-    return (
-      <div>
-      <div className="game">
-        <div className="game-board">
-        <Board squares={state.squares} />
-        </div>
-        <GameTurn turn={state.turn} />
-      </div>
-      <div>dasdasda</div>
-    </div>
-    );
-  
-}
+const Game: React.FC = () => {
+  const [state] = useState({
+    squares: initialiseChessBoard(),
+    status: '',
+    turn: 'White',
+  });
+
+  return (
+    <GameContainer>
+      <Board squares={state.squares} />
+      <GameTurn turn={state.turn} />
+    </GameContainer>
+  );
+};
 
 export default Game;

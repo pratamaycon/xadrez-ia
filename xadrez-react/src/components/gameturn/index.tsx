@@ -1,27 +1,33 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { GameInfo, TituloTurno, PlayerTurnoBox } from './styles'
+import { Container, ContainerIcone, ImgIcone, BotaoIcone, TituloIcone } from './styles';
 
-import Button from '@material-ui/core/Button';
+import blackTurn from '../../assets/turn-black.png';
+import whiteTurn from '../../assets/turn-white.png';
 
-const GameTurn: React.FC<{ turn: any}> = (turn) => {
 
-    const [state, setState] = useState({ backgroundColor: turn.turn }) //add const
+const GameTurn: React.FC<{ turn: any }> = (turn) => {
+  const [state, setState] = useState({ name: turn.turn, image: whiteTurn }); //add const
 
-    const boxClick = () => {
-      const newColor = state.backgroundColor === 'black' ? 'white' : 'black';
-      setState({
-        backgroundColor: newColor
-      });
-    }
-
-    return (
-      <GameInfo>
-        <PlayerTurnoBox style={{ backgroundColor: state.backgroundColor }} />
-        <TituloTurno>Turno</TituloTurno>
-        <Button variant="outlined" onClick={boxClick}>Passar a vez</Button>  
-      </GameInfo>
-    );
+  const onClick = () => {
+    const newName = state.name === 'Black' ? 'White' : 'Black';
+    const newImage = newName === 'Black'? blackTurn : whiteTurn;
+    setState({
+      name: newName,
+      image: newImage
+    });
   };
-  
+
+  return (
+    <Container>
+      <ContainerIcone>
+        <BotaoIcone onClick={onClick}>
+          <ImgIcone src={state.image} />
+          <TituloIcone> Turn {state.name} </TituloIcone>
+        </BotaoIcone>
+      </ContainerIcone>
+    </Container>
+  );
+};
+
 export default GameTurn;

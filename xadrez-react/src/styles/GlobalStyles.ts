@@ -32,19 +32,6 @@ export default createGlobalStyle`
       padding: 0;
     }
 
-    .game {
-      height: calc(100vh - 48px - 64px);
-      padding: 0;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .game-board {
-
-    }
-
     .square {
       background: transparent;
       border: 1px solid transparent;
