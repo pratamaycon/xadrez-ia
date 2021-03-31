@@ -7,7 +7,7 @@ export default createGlobalStyle`
     
     body {
         font: 14px 'Century Gothic', Futura, sans-serif;
-        background-color: gray;
+        background-color: #fff  ;
         margin: 0;
     }
 
@@ -30,35 +30,6 @@ export default createGlobalStyle`
       color: black;
       background: white;
       padding: 0;
-    }
-
-    .game {
-      height: calc(100vh - 48px - 64px);
-      padding: 0;
-      margin: 0;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .titulo {
-      width: 100%;  
-      max-height: 64px;
-      text-align: center;
-      font-size: 3rem;
-      font-family: 'Akaya Kanadaka', cursive;
-      font-family: 'DotGothic16', sans-serif;
-      font-family: 'Flavors', cursive;
-      font-style: normal;
-      font-weight: 400;
-    }
-
-    .game-board {
-
     }
 
     .square {
@@ -96,12 +67,12 @@ export default createGlobalStyle`
     }
 
     .dark-square {
-      background-color: RGB(187, 190, 100);
+      background-color: #f0d9b5;
       background-repeat: no-repeat;
     }
 
     .light-square {
-      background-color: RGB(234, 240, 206);
+      background-color: #b58863;
       background-repeat: no-repeat;
     }
 

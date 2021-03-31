@@ -4,6 +4,11 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
 O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), e este projeto é aderente ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] 15-03-2021
+
+## Adicionado
+
+- Criação de componente para gerenciamento de turnos
 
 ## [1.1.2] 04-03-2021
 
@@ -45,6 +50,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Criação do Tabuleiro.
 - Criação do Projeto Xadrez-React.
 
+[1.1.3]: https://github.com/pratamaycon/xadrez-ia/pull/9/files
 [1.1.2]: https://github.com/pratamaycon/xadrez-ia/pull/6/files
 [1.1.1]: https://github.com/pratamaycon/xadrez-ia/pull/5/files
 [1.1.0]: https://github.com/pratamaycon/xadrez-ia/pull/4/files
