@@ -22,9 +22,9 @@ function App() {
     <div className="container">
       {isGameOver && (
         <h2 className="vertical-text">
-          GAME OVER
+          FIM DE JOGO
           <button onClick={resetGame}>
-            <span className="vertical-text"> NEW GAME</span>
+            <span className="vertical-text"> NOVO JOGO</span>
           </button>
         </h2>
       )}

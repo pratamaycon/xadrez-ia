@@ -107,20 +107,20 @@ function updateGame(pendingPromotion){
 
 function getGameResult() {
     if (chess.in_checkmate()) {
-        const winner = chess.turn() === "w" ? 'BLACK' : 'WHITE'
-        return `CHECKMATE - WINNER - ${winner}`
+        const winner = chess.turn() === "w" ? 'PRETAS' : 'BRANCAS'
+        return `CHECKMATE - VITÓRIDA DAS - ${winner}`
     } else if (chess.in_draw()) {
-        let reason = '50 - MOVES - RULE'
+        let reason = 'REGRA - DOS - 50 MOVIMENTOS'
         if (chess.in_stalemate()) {
-            reason = 'STALEMATE'
+            reason = 'AFOGAMENTO'
         } else if (chess.in_threefold_repetition()) {
-            reason = 'REPETITION'
+            reason = 'REPETICAO'
         } else if (chess.insufficient_material()) {
-            reason = "INSUFFICIENT MATERIAL"
+            reason = "PECAS INSUFICIENTES"
         }
-        return `DRAW - ${reason}`
+        return `EMPATE - ${reason}`
     } else {
-        return 'UNKNOWN REASON'
+        return ' SIM IDENTIFICACAO'
     }
 }
 export function resetGame() {
