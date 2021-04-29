@@ -3,6 +3,7 @@ import {BehaviorSubject} from 'rxjs';
 
 
 let promotion = 'rnb2bnr/pppPkppp/8/4p3/7q/8/PPPP1PPP/RNBQKBNR w KQ - 1 5'
+//let promotion = ' rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR w KQ - 1 5'
 const chess = new Chess(promotion)
 
 
@@ -12,12 +13,24 @@ export function initGame(){
     updateGame()
 }
 
+/*export function setMenuOptiom(option){
+    const playerXPlayer = 0;
+    const playerXIa = 1
+    const IaXIa =2 
+
+    menuOption = [playerXPlayer, playerXIa,IaXIa]
+
+
+
+    return option;
+}*/
 
 export function handleMove(from, to){
-    const promotions = chess.moves({verbose: true}).filter(m => promotion)
-    const moves = chess.moves({verbose: true})
+    const promotions = chess.moves({ verbose: true }).filter(m => m.promotion)
+    // eslint-disable-next-line
+    //const moves = chess.moves({verbose: true})
     console.table(promotions)
-    if (moves[1].color === "b"){
+    /*if (moves[1].color === "b"){
         console.log("**************")
         const moveia = moves.[Math.floor(Math.random() * moves.length)]
         console.log(moveia)
@@ -27,13 +40,14 @@ export function handleMove(from, to){
     else{
         console.log(moves)
         move(from,to)
-    }
+    } */
     // eslint-disable-next-line
-    if (promotions.some(p => `${p.from}:${p.to}` ===  `${from}:${to}` )) {
-        const pendingPromotion = {from , to, color: promotions[0].color}
+    if (promotions.some(p => `${p.from}:${p.to}` ===  `${from}:${to}`)) {
+        const pendingPromotion = {from , to, color: promotions[0].color }
         updateGame(pendingPromotion)
+
     }
-    const {pendingPromotion} = gameSubject.getValue()
+    const { pendingPromotion } = gameSubject.getValue()
 
     if (!pendingPromotion){
         move(from, to)
@@ -69,7 +83,7 @@ export function move(from, to, promotion){
     const legalMove = chess.move(tempMove)
 
     if (legalMove){
-        console.log(chess.fen())
+        //console.log(chess.fen())
         updateGame()
 
     }else{
