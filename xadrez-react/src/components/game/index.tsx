@@ -7,6 +7,7 @@ import GameTurn from '../gameturn';
 import { GameContainer } from './styles';
 
 const Game: React.FC = () => {
+
   const [state] = useState({
     squares: initialiseChessBoard(),
     status: '',

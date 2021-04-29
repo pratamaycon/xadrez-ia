@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="#">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -9,7 +9,7 @@
   <p align="center">
     Visulize o projeto clicando aqui!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href='https://xadrez-ia.web.app/'>View Demo</a>
   </p>
 </p>
 
@@ -30,7 +30,6 @@
         <li><a href="#instalacao">Instalação</a></li>
       </ul>
     </li>
-    <li><a href="#uso">Uso</a></li>
     <li><a href="#contribuicao">Contribuição</a></li>
     <li><a href="#licenca">Licença</a></li>
         <ul>
@@ -81,36 +80,21 @@ Para rodar aplicação de forma `local` é necessário:
   npm start
   ```
 Vai estar disponível no seguinte endereço, após ter seguindo os passos anteriores na ordem demonstrada
-  * [Projeto Localmente](http://localhost:3000/)
+  * [http://localhost:3000/](http://localhost:3000/)
 
 Para acessar a aplicação em `nuvem` basta acessar esse link.
 
 * [Projeto em Nuvem](https://google.com)
-
-## Uso
-
-Essa seção visa tornar a documentação do projeto mais facilmente disponível.
-
-[Documentação](https://example.com)
-
-## Contribuicao
-
-Durante o desenvolvimento do projeto adotamos esse passo a passo para estimular a contribuição dos membros do time.
-
-1. Clone the Repo
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## Licenca
 
 Distribuído sob a licença MIT. Consulte a `LICENÇA` para obter mais informações.
 
 ### Reconhecimento
-* [ChessJs](https://github.com/jhlywa/chess.js/blob/master/LICENSE)
-* [RXJS](https://github.com/ReactiveX/rxjs/blob/master/LICENSE.txt)
-* [React-dnd](https://github.com/react-dnd/react-dnd/blob/main/LICENSE)
+* [https://github.com/jhlywa/chess.js/blob/master/LICENSE](https://github.com/jhlywa/chess.js/blob/master/LICENSE)
+* [https://github.com/ReactiveX/rxjs/blob/master/LICENSE.txt](https://github.com/ReactiveX/rxjs/blob/master/LICENSE.txt)
+* [https://github.com/react-dnd/react-dnd/blob/main/LICENSE](https://github.com/react-dnd/react-dnd/blob/main/LICENSE)
+* [https://github.com/sindresorhus/query-string/blob/main/license](https://github.com/sindresorhus/query-string/blob/main/license)
 
 ## Contato
 Project Link: [https://github.com/pratamaycon/xadrez-ia](https://github.com/pratamaycon/xadrez-ia)
