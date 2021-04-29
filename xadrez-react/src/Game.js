@@ -89,8 +89,9 @@ export function move(from, to, promotion){
         //console.log(chess.fen())
         updateGame()
 
-    }else{
-        alert("Movimento Inválido")
+    }else if (!chess.in_checkmate()){
+        let pieceTurn = chess.turn() === "w" ? 'BRANCAS' : 'PRETAS'
+        alert(`Movimento Inválido, é a vez das pecas ${pieceTurn}`)
     }
 }
 
@@ -123,6 +124,11 @@ function getGameResult() {
         return ' SIM IDENTIFICACAO'
     }
 }
+
+function moveEvaluetion(){
+    	let nume = true;
+}
+
 export function resetGame() {
     chess.reset()
     updateGame()
