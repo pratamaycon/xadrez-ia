@@ -1,5 +1,10 @@
 import * as Chess from 'chess.js';
 import {BehaviorSubject} from 'rxjs';
+import {
+    BrowserRouter as Router,
+    Link,
+    useLocation
+  } from "react-router-dom";
 
 
 let promotion = 'rnb2bnr/pppPkppp/8/4p3/7q/8/PPPP1PPP/RNBQKBNR w KQ - 1 5'
@@ -28,56 +33,90 @@ export function initGame(){
     return option;
 }*/
 
-export function handleMove(from, to){
-
+export function handleMove(modo,from, to){
     if (!chess.in_checkmate() && !chess.in_stalemate() && !chess.in_stalemate() && !chess.in_threefold_repetition() && !chess.insufficient_material()   ){
-    const promotions = chess.moves({ verbose: true }).filter(m => m.promotion)
-    // eslint-disable-next-line
-    //const moves = chess.moves({verbose: true})
-    console.table(promotions)
+        const promotions = chess.moves({ verbose: true }).filter(m => m.promotion)
 
-    //IA POSSIBLE-MOVES
-    const possibleMoves = chess.moves({verbose: true})
-    console.log(possibleMoves)
+        console.table(promotions)
 
+        if( modo  == 1 ){
+            console.log("Jogador contra IA")
+            //IA POSSIBLE-MOVES
+            const possibleMoves = chess.moves({verbose: true})
+            console.log(possibleMoves)
+
+            if (possibleMoves[1].color === "b"){
+                //moveEvaluetionWarnig()
+                const possibleMoves = chess.moves({verbose: true})
+                const possibleCapture = chess.moves({verbose: true}).filter(m => m.captured)
+                console.log("************** Possible Moves **************")
+                console.table(possibleMoves)
+                console.log("************** Possible Caputres **************")
+                console.log(possibleCapture)
+                console.table(possibleCapture)
+                if(possibleCapture.length !== 0){
+                    const moveIaCapture = possibleCapture.[Math.floor(Math.random() * possibleCapture.length)]
+                    console.log(possibleCapture)
+                    move(moveIaCapture.from , moveIaCapture.to)
+                    console.log(moveIaCapture)
+                } else {
+                    const moveia = possibleMoves.[Math.floor(Math.random() * possibleMoves.length)]
+                    console.log(moveia)
+
+                    move(moveia.from , moveia.to)
+                }
+            }
+        } 
+        
+        if( modo  == 2){
+            console.log("IA X IA")
+
+            //IA POSSIBLE-MOVES
+            const possibleMoves = chess.moves({verbose: true})
+            console.log(possibleMoves)
+
+            if (possibleMoves[1].color === "b" || possibleMoves[1].color === "w"){
+                //moveEvaluetionWarnig()
+                const possibleMoves = chess.moves({verbose: true})
+                const possibleCapture = chess.moves({verbose: true}).filter(m => m.captured)
+                console.log("************** Possible Moves **************")
+                console.table(possibleMoves)
+                console.log("************** Possible Caputres **************")
+                console.log(possibleCapture)
+                console.table(possibleCapture)
+                if(possibleCapture.length !== 0){
+                    const moveIaCapture = possibleCapture.[Math.floor(Math.random() * possibleCapture.length)]
+                    console.log(possibleCapture)
+                    move(moveIaCapture.from , moveIaCapture.to)
+                    console.log(moveIaCapture)
+                } else {
+                    const moveia = possibleMoves.[Math.floor(Math.random() * possibleMoves.length)]
+                    console.log(moveia)
+
+                    move(moveia.from , moveia.to)
+                }
+            }
+        } 
+
+        /*if( window.location.href.indexOf("modo=0")){
+            console.log("Jogador contra jogador")
+            
+        }*/
+
+        // eslint-disable-next-line
+        if (promotions.some(p => `${p.from}:${p.to}` ===  `${from}:${to}`)) {
+            const pendingPromotion = {from , to, color: promotions[0].color }
+            updateGame(pendingPromotion)
     
-    if (possibleMoves[1].color === "b"){
-        //moveEvaluetionWarnig()
-        const possibleMoves = chess.moves({verbose: true})
-        const possibleCapture = chess.moves({verbose: true}).filter(m => m.captured)
-        console.log("************** Possible Moves **************")
-        console.table(possibleMoves)
-        console.log("************** Possible Caputres **************")
-        console.log(possibleCapture)
-        console.table(possibleCapture)
-        if(possibleCapture.length !== 0){
-            const moveIaCapture = possibleCapture.[Math.floor(Math.random() * possibleCapture.length)]
-            console.log(possibleCapture)
-            move(moveIaCapture.from , moveIaCapture.to)
-            console.log(moveIaCapture)
-        } else {
-            const moveia = possibleMoves.[Math.floor(Math.random() * possibleMoves.length)]
-            console.log(moveia)
-
-            move(moveia.from , moveia.to)
         }
-    }
-    /*else{
-        console.log(moves)
-        move(from,to)
-    } */
-    // eslint-disable-next-line
-    if (promotions.some(p => `${p.from}:${p.to}` ===  `${from}:${to}`)) {
-        const pendingPromotion = {from , to, color: promotions[0].color }
-        updateGame(pendingPromotion)
+        const { pendingPromotion } = gameSubject.getValue()
+    
+        if (!pendingPromotion){
+            move(from, to)
+        }
 
     }
-    const { pendingPromotion } = gameSubject.getValue()
 
-    if (!pendingPromotion){
-        move(from, to)
-    }
-}
 }
 
 export function iaHandleMove(from, to){
@@ -113,7 +152,7 @@ export function move(from, to, promotion){
 
     }else if (!chess.in_checkmate()){
         let pieceTurn = chess.turn() === "w" ? 'BRANCAS' : 'PRETAS'
-        alert(`Movimento Inválido, é a vez das pecas ${pieceTurn}`)
+        //alert(`Movimento Inválido, é a vez das pecas ${pieceTurn}`)
     }
 }
 

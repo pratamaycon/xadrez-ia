@@ -13,16 +13,17 @@ export default function Piece({
         },
     })
     
-    const pieceImg = require(`./assets/${type}_${color}.png`)   
+    const pieceImg = require(`./assets/${type}_${color}.png`)  
+    //console.log(pieceImg) 
     return (
         <>
-        <DragPreviewImage connect={preview} src={pieceImg} />
+        <DragPreviewImage connect={preview} src={pieceImg.default} />
         <div 
         className="piece-container" 
         ref={drag} 
         style={{opacity: isDragging ? 0 : 1}} 
         >
-            <img src={pieceImg} alt="" className="piece" />
+            <img src={pieceImg.default} alt="" className="piece" />
         </div>
         </>
     )
